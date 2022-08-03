@@ -1,5 +1,6 @@
 function createResume() {
-    const fullName = document.getElementById("fullName").value;
+    const firstName = document.getElementById("firstName").value;
+    const lastName = document.getElementById("lastName").value;
     const fullAddress = document.getElementById("fullAddress").value;
     const phone = document.getElementById("telePhone").value;
     const email = document.getElementById("email").value;
@@ -19,11 +20,18 @@ function createResume() {
               </head>
          <body>
          `;
-    
+    const fullName = firstName +" " + lastName; 
     myText += ` 
-              <div class='name'>
-                ${ fullName }
-                 </div> `;
+    <header style="background-color: #9575cd" class="jumbotron">
+    <div class="container">
+        <div class="row row-header">
+            <div class="col-5" >
+               <h1 style="color:aliceblue">${fullName}</h1>
+            </div>
+        </div>
+    </div>
+    </div>
+</header>`;
     myText += `<div> 
                 ${ fullAddress }   /  ${ phone } 
                 </div> `;

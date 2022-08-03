@@ -3,60 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Required meta tags always come first -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <link href="resume.css" rel="stylesheet" />
+    <!-- Bootstrap Date-Picker Plugin -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
     <title>Model Form</title>
+
+    
 </head>
 <body>
-    <h1 style="text-align: center;">Build Your Resume</h1>
-    <form action="" name="resumeForm" style="font-family:monospace; margin-left: 3rem;">
+    <nav class="navbar navbar-dark navbar-expand-sm fixed-top bg-primary">
+        <div class="container">
+          <a class="navbar-brand mr-auto nav-link" href="resumeForm.html">Home</a>
+          <div class="collapse navbar-collapse" id="Navbar">
+            <ul class="navbar-nav mr-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="#">About</a>
+              </li>
+              <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
+              <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
 
-        <p>
-            <label for="fullName">Enter your full name: </label><br>
-            <input type="text" name="fullName" id="fullName" size="70" >
-        </p>
-        <p>
-            <label for="fullAddress">Enter your full address: </label><br>
-            <input type="text" name="fullAddress" id="fullAddress" size="70" >
-        </p>
-        <p>
+
+    <header style="background-color: #f66565e0" class="jumbotron">
+        <div class="container">
+            <div class="row row-header">
+                <div class="col-12">
+                   <h1 style="color:aliceblue"> Build Your Resume</h1>
+                </div>
+            </div>
+            <div class="col-12 col-sm"></div>
+        </div>
+        </div>
+    </header>
+    
+    <form action="" name="resumeForm" style="font-family:monospace; margin-left: 3rem;">
+        <div class="form-row">
+            <div class="form-group col-lg-3">
+                <label for="firstName">Enter your firstname: </label><br>
+                <input type="text" name="firstName" id="firstName" size="70" class="form-control">
+            </div>
+            <div class="form-group col-lg-2">
+                <label for="lastName">Enter your lastname: </label><br>
+                <input type="text" name="lastName" id="lastName" size="70" class="form-control">
+            </div>
+            <div class="form-group col-lg-5">
+                <label for="fullAddress">Enter your address: </label><br>
+                <input type="text" name="fullAddress" id="fullAddress" size="70" class="form-control">
+            </div>
+        </div>
+    <p>
         <label for="telePhone">Enter your phone number: </label><br>
-        <input type="tel" name="telePhone" id="telePhone" size="70" >
+        <input type="tel" name="telePhone" id="telePhone" size="70" class="form-control" maxlength="8" required>
     </p>
     <p>
-      <label for="email">Enter your email: </label><br>
-      <input type="text" name="email" id="email" size="70" required> 
+        <label for="email">Email address</label>
+        <input type="text" name="email" id="email" size="70" required class="form-control" placeholder="name@example.com">
     </p>
     <p>
       <label for="website">Enter your website: </label><br>
-      <input type="text" name="website" id="website" > 
+      <input type="text" name="website" id="website" class="form-control"> 
     </p>
    
     <p>
         <label for="personalInfo">Enter a summary about you: </label><br>
-        <textarea name="personalInfo" id="personalInfo" cols="72" rows="4" ></textarea>
+        <textarea name="personalInfo" id="personalInfo" cols="72" rows="4" class="form-control"></textarea>
     </p>
     <p>
         <label for="careerSkills">Enter your skill set: </label><br>
-        <textarea name="careerSkills" id="careerSkills" cols="72" rows="4" ></textarea>
+        <textarea name="careerSkills" id="careerSkills" cols="72" rows="4" class="form-control"></textarea>
     </p>
     <p>
     <label for="educationDeets">Enter your education details: </label><br>
-            <textarea name="educationDeets" id="educationDeets" cols="72" rows="4" ></textarea>
+            <textarea name="educationDeets" id="educationDeets" cols="72" rows="4" class="form-control"></textarea>
         </p>
-        <p>
+            <p>
             <label for="startDate">Enter the start date for current or last previous employment: </label><br>
-            <input type="date" name="startDate" id="startDate" value="">
-        </p>
+                <div class="form-group">
+                    <input class="form-control" type="date" name="startDate" id="startDate" value="" >
+                </div>
+            </p>
         <p>
             <label for="endDate">Enter the end date for previous employment, if any: </label><br>
-            <input type="date" name="endDate" id="endDate" value="">
+            <div class="form-group">
+                <input class="form-control" type="date" name="endDate" id="endDate" value="">    
+            </div>
         </p>
 
         <p>
             <label for="employment">Enter your current or last employment experience:</label><br>
-            <textarea name="employment" id="employment" cols="72" rows="10"></textarea>
+            <textarea name="employment" id="employment" cols="72" rows="10" class="form-control"></textarea>
     </p>
     <p>
-        <input type="button" value="Create Resume" name="create" id="create" onclick="createResume()">
+        <button type="submit" value="Create Resume" name="create" id="create" onclick="createResume()" class="btn btn-outline-success">Build Resume</button>
     </p>
     </form>
     
